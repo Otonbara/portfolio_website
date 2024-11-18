@@ -29,6 +29,5 @@ Feel free to explore the various sections of my portfolio, view my projects, and
 
 ## Contact
 For any questions or inquiries, please contact me at:
-
-Email: alfredokolai@gmail.com
-LinkedIn: [Otonbara Okolai](https://www.linkedin.com/in/otonbaraokolai/)
+- Email: alfredokolai@gmail.com
+- LinkedIn: [Otonbara Okolai](https://www.linkedin.com/in/otonbaraokolai/)
