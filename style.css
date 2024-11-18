@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto',sans-serif;
+    background-color: #2e2e2e;
+    color: #ccc;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.light-mode {
+    background-color: #ccc;
+    color: #2e2e2e;
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1); /* Optional: gives a slight background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensures it sits above other content */
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goku-gif {
+    width: 150px;
+    height: auto;
+    animation: move 1s linear forwards;
+}
+
+.loading-text {
+    font-size: 24px;
+    color: #ccc; /* Text color */
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 1;
+    animation: none;
+}
+
+/* Keyframes for moving the GIF */
+@keyframes move {
+    0% {
+        transform: translateX(-50%); /* Start off-screen to the left */
+    }
+    100% {
+        transform: translateX(20%);
+    }
+}
+
+.goku-icon {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.goku-icon img {
+    width: 55px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .goku-icon img {
+        display: none;
+    }
+}
+
+.theme-switch {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.dark-icon {
+    color: #2e2e2e;
+}
+
+body.light-mode .dark-icon {
+    color: #2e2e2e;
+}
+
+.light-icon {
+    color: #ffd700;
+}
+
+body.light-mode .light-icon {
+    color: #ccc;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.profile-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.profile-img img {
+    width: 250px;
+    height: auto;
+    background-color: transparent;
+    border-radius: 15px;
+    box-shadow: 4px 4px 20px rgba(255, 255, 255, 0.5);
+}
+
+body.light-mode .profile-img img {
+    box-shadow: 10px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.profile-img img:hover {
+    transform: translateY(-10px);
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#name{
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+@media (max-width: 768px) {
+    #name {
+        font-size: 30px;
+    }
+}
+
+#location {
+    font-size: 20px;
+    font-weight: bold;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+#about-text {
+    font-size: 20px;
+    font-weight: bold;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 20px 0;
+}
+
+.pages a {
+    text-decoration: none;
+    color: #ccc;
+    border-radius: 20px;
+    border: #fff outset 2px;
+    padding: 10px 15px;
+    font-weight: bold;
+    backdrop-filter: blur(15px);
+}
+
+.resume a {
+    text-decoration: none;
+    color: #ccc;
+    border-radius: 20px;
+    border: #fff outset 2px;
+    padding: 10px 15px;
+    font-weight: bold;
+    backdrop-filter: blur(15px); 
+}
+
+body.light-mode .pages a,
+body.light-mode .resume a {
+    background-color: #ccc;
+    color: #2e2e2e;
+}
+
+body.light-mode .pages a:hover, 
+body.light-mode .resume a:hover {
+    background-color: #2e2e2e;
+    color: #ccc;
+}
+
+@keyframes rainbow-border {
+    0% { border-color: red; }
+    14% { border-color: orange; }
+    28% { border-color: yellow; }
+    42% { border-color: green; }
+    57% { border-color: blue; }
+    71% { border-color: indigo; }
+    85% { border-color: violet; }
+    100% { border-color: red; }
+}
+
+.pages a:hover,
+.resume a:hover {
+    animation: rainbow-border 3s infinite;
+    background-color: #ccc;
+    color: #2e2e2e;
+    transform: scale(1.1);
+}
+
+.resume {
+    margin: 20px 0;
+    padding: 10px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact p {
+    font-weight: bold;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+body.light-mode .contact a {
+    color: #2e2e2e;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    margin: 20px 0;
+}
+
+.links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 20px;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+.links a:hover {
+    transform: scale(1.5);
+}
+
+body.light-mode .links a {
+    color: #2e2e2e;
+}
+
+@media (max-width: 768px) {
+    .contact a {
+        font-size: 15px;
+    }
+
+    .contact p {
+        font-size: 15px;
+    }
+}
